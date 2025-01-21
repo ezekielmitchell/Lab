@@ -1,0 +1,35 @@
+### Get all fruits
+GET http://localhost:8000/fruits
+Accept: application/json
+
+### Add a new fruit - Orange
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+    "name": "Orange"
+}
+
+### Add a new fruit - Apple
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+    "name": "Apple"
+}
+
+### Add a new fruit - Watermelon
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+    "name": "Watermelon"
+}
+
+### Add a new fruit - Pear
+POST http://localhost:8000/fruits
+Content-Type: application/json
+
+{
+    "name": "Pear"
+}
