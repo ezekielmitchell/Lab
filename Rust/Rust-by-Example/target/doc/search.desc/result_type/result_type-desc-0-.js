@@ -1,0 +1,1 @@
+searchState.loadedDescShard("result_type", 0, "")

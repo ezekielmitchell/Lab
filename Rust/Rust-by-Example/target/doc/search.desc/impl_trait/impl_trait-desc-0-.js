@@ -1,0 +1,1 @@
+searchState.loadedDescShard("impl_trait", 0, "")

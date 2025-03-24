@@ -45,8 +45,8 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/rust-by-example-journey.git
-cd rust-by-example-journey
+git clone git@github.com:rust-lang/rust-by-example.git
+cd rust-by-example
 
 # Run a specific example with rustc
 rustc src/01_hello/hello.rs && ./hello
