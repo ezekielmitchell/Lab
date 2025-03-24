@@ -60,8 +60,8 @@ cargo run --bin hello
 <details open>
 <summary><b>Core Concepts</b></summary>
 
-- [ ] Hello World
-- [ ] Primitives
+- [X] Hello World
+- [X] Primitives
 - [ ] Custom Types
 - [ ] Variable Bindings
 
