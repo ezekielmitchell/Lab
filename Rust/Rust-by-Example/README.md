@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-stable-brightgreen.svg" alt="Rust Version"></a>
-  <a href="https://github.com/yourusername/rust-by-example-journey/commits/main"><img src="https://img.shields.io/badge/updated-March%2023,%202025-blue.svg" alt="Updated"></a>
+  <a href="https://github.com/yourusername/rust-by-example-journey/commits/main"><img src="https://img.shields.io/badge/updated-March%2025,%202025-blue.svg" alt="Updated"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
@@ -60,9 +60,9 @@ cargo run --bin hello
 <details open>
 <summary><b>Core Concepts</b></summary>
 
-- [X] Hello World
-- [X] Primitives
-- [ ] Custom Types
+- [x] Hello World
+- [x] Primitives
+- [x] Custom Types
 - [ ] Variable Bindings
 
 </details>
