@@ -63,16 +63,16 @@ cargo run --bin hello
 - [x] Hello World
 - [x] Primitives
 - [x] Custom Types
-- [ ] Variable Bindings
+- [x] Variable Bindings
 
 </details>
 
 <details>
 <summary><b>Intermediate Features</b></summary>
 
-- [ ] Types
+- [x] Types
 - [ ] Conversion
-- [ ] Expressions
+- [x] Expressions
 - [ ] Flow Control
 - [ ] Functions
 - [ ] Modules
