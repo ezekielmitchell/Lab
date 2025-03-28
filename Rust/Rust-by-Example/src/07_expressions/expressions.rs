@@ -13,7 +13,7 @@ fn main() {
     15;
 
     // blocks are expressions too, so they can be used as values in assignments
-    let y = {
+    let y: i32 = {
         let x_squared = x*x;
         let x_cube = x_squared*x;
         x_cube + x_squared + x // this expression will be assigned to y
