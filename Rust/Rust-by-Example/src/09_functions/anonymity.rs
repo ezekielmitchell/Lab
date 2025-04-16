@@ -1,3 +1,13 @@
+#![allow(dead_code)]
+
+// 'F' must be generic
+fn apply<F>(f: F) where
+    F: FnOnce() {
+        f();
+}
+
 fn main() {
-    println!("Hello from src/09_functions/anonymity.rs");
+    let x = 7;
+    let print = || println!("{}", x);
+    apply(print);
 }

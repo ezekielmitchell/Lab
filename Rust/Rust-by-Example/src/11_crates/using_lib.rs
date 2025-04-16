@@ -1,3 +1,7 @@
+// extern crate rary; // May be required for Rust 2015 edition or earlier
+#![allow(special_module_name)]
+mod lib;
 fn main() {
-    println!("Hello from src/11_crates/using_lib.rs");
+    lib::indirect_access();
+    lib::public_function();
 }

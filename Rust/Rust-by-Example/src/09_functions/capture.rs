@@ -1,6 +1,8 @@
 // Capturing refers to how closures can access and use variables from their enclosing scope
 #![allow(dead_code)]
 
+use core::num;
+
 fn main(){
     // Value to be captured
     let message = String::from("Hello");
@@ -27,7 +29,6 @@ fn main(){
 
     consume();
 
-    use std::mem;
     let color = String::from("green");
     let print = || println!("Color: {}", color);
     // Call the closure using the borrow.
@@ -50,5 +51,18 @@ fn main(){
     inc();
     inc();
 
+    let multiplier: i32 = 5;
+    let multiply= |x: i32| x * multiplier;
+    
+    println!("{}", multiply(3));
+    println!("{}", multiply(5));
 
+    let numbers = vec![1, 2, 3, 4, 5];
+    // 'move' forces a closure to take ownership of the values it uses
+    let doubled: Vec<i32> = numbers.iter().map(move |x| x * 2).collect();
+    println!("Doubled numbers: {:?}", doubled);
+    for i in numbers {print!("{i} ")}
+
+    // ** Move ** //
+    // forces a closure to take ownership of the values it uses
 }
