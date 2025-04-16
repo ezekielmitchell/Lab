@@ -1,0 +1,4 @@
+module top(
+	input wire [17:0] SW,
+	output reg [17:0] LED_RED);
+	
