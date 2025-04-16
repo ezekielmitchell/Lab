@@ -1,0 +1,1 @@
+searchState.loadedDescShard("ownership", 0, "")

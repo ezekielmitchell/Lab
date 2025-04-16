@@ -1,0 +1,611 @@
+[package]
+name = "Rust-by-Example"
+version = "1.85.0"
+edition = "2021"
+authors = ["Ezekiel A. Mitchell <ezekiel@endr.us>"]
+description = "My journey through Rust by Example guide"
+repository = "https://github.com/ezekielmitchell/Lab/tree/main/Rust/Rust-by-Example"
+license = "MIT"
+
+[dependencies]
+rand="0.9.0"
+# some_lib = {git = "https://github.com/user/some-lib"}
+serde ={ version="1.0.219", features = ["derive"]}
+
+# Chapter 1: Hello World
+[[bin]]
+name = "hello"
+path = "src/01_hello/hello.rs"
+
+[[bin]]
+name = "comments"
+path = "src/01_hello/comments.rs"
+
+[[bin]]
+name = "doc_comments"
+path = "src/01_hello/doc_comments.rs"
+
+[[bin]]
+name = "formatted_print"
+path = "src/01_hello/formatted_print.rs"
+
+[[bin]]
+name = "debug"
+path = "src/01_hello/debug.rs"
+
+[[bin]]
+name = "display"
+path = "src/01_hello/display.rs"
+
+[[bin]]
+name = "list"
+path = "src/01_hello/list.rs"
+
+[[bin]]
+name = "formatting"
+path = "src/01_hello/formatting.rs"
+
+# Chapter 2: Primitives
+[[bin]]
+name = "literals"
+path = "src/02_primitives/literals.rs"
+
+[[bin]]
+name = "tuples"
+path = "src/02_primitives/tuples.rs"
+
+[[bin]]
+name = "arrays"
+path = "src/02_primitives/arrays.rs"
+
+# Chapter 3: Custom Types
+[[bin]]
+name = "structs"
+path = "src/03_custom_types/structs.rs"
+
+[[bin]]
+name = "enums"
+path = "src/03_custom_types/enums.rs"
+
+[[bin]]
+name = "enum_use"
+path = "src/03_custom_types/enum_use.rs"
+
+[[bin]]
+name = "c_like"
+path = "src/03_custom_types/c_like.rs"
+
+[[bin]]
+name = "linked_list"
+path = "src/03_custom_types/testcase_linked_list.rs"
+
+[[bin]]
+name = "constants"
+path = "src/03_custom_types/constants.rs"
+
+# Chapter 4: Variable Bindings
+[[bin]]
+name = "mutability"
+path = "src/04_variable_bindings/mutability.rs"
+
+[[bin]]
+name = "scope"
+path = "src/04_variable_bindings/scope.rs"
+
+[[bin]]
+name = "declare"
+path = "src/04_variable_bindings/declare.rs"
+
+[[bin]]
+name = "freezing"
+path = "src/04_variable_bindings/freezing.rs"
+
+# Chapter 5: Types
+[[bin]]
+name = "casting"
+path = "src/05_types/casting.rs"
+
+[[bin]]
+name = "type_literals"
+path = "src/05_types/literals.rs"
+
+[[bin]]
+name = "inference"
+path = "src/05_types/inference.rs"
+
+[[bin]]
+name = "aliasing"
+path = "src/05_types/aliasing.rs"
+
+# Chapter 6: Conversion
+[[bin]]
+name = "from_into"
+path = "src/06_conversion/from_into.rs"
+
+[[bin]]
+name = "tryfrom_tryinto"
+path = "src/06_conversion/tryfrom_tryinto.rs"
+
+[[bin]]
+name = "string_conv"
+path = "src/06_conversion/string.rs"
+
+# Chapter 7: Expressions
+[[bin]]
+name = "expressions"
+path = "src/07_expressions/expressions.rs"
+
+# Chapter 8: Flow Control
+[[bin]]
+name = "if_else"
+path = "src/08_flow_control/if_else.rs"
+
+[[bin]]
+name = "loop_basic"
+path = "src/08_flow_control/loop.rs"
+
+[[bin]]
+name = "loop_nesting"
+path = "src/08_flow_control/nesting.rs"
+
+[[bin]]
+name = "loop_return"
+path = "src/08_flow_control/returning.rs"
+
+[[bin]]
+name = "while_loop"
+path = "src/08_flow_control/while.rs"
+
+[[bin]]
+name = "for_loop"
+path = "src/08_flow_control/for.rs"
+
+[[bin]]
+name = "match_basic"
+path = "src/08_flow_control/match.rs"
+
+[[bin]]
+name = "destructuring"
+path = "src/08_flow_control/destructuring.rs"
+
+[[bin]]
+name = "guards"
+path = "src/08_flow_control/guards.rs"
+
+[[bin]]
+name = "binding"
+path = "src/08_flow_control/binding.rs"
+
+[[bin]]
+name = "if_let"
+path = "src/08_flow_control/if_let.rs"
+
+[[bin]]
+name = "while_let"
+path = "src/08_flow_control/while_let.rs"
+
+# Chapter 9: Functions
+[[bin]]
+name = "functions"
+path = "src/09_functions/functions.rs"
+
+[[bin]]
+name = "methods"
+path = "src/09_functions/methods.rs"
+
+[[bin]]
+name = "closures"
+path = "src/09_functions/closures.rs"
+
+[[bin]]
+name = "capture"
+path = "src/09_functions/capture.rs"
+
+[[bin]]
+name = "input_parameters"
+path = "src/09_functions/input_parameters.rs"
+
+[[bin]]
+name = "anonymity"
+path = "src/09_functions/anonymity.rs"
+
+[[bin]]
+name = "input_functions"
+path = "src/09_functions/input_functions.rs"
+
+[[bin]]
+name = "output_parameters"
+path = "src/09_functions/output_parameters.rs"
+
+[[bin]]
+name = "closure_examples"
+path = "src/09_functions/closure_examples.rs"
+
+[[bin]]
+name = "hof"
+path = "src/09_functions/higher_order_functions.rs"
+
+[[bin]]
+name = "diverging"
+path = "src/09_functions/diverging_functions.rs"
+
+# Chapter 10: Modules
+[[bin]]
+name = "visibility"
+path = "src/10_modules/visibility.rs"
+
+[[bin]]
+name = "struct_visibility"
+path = "src/10_modules/struct_visibility.rs"
+
+[[bin]]
+name = "use_declaration"
+path = "src/10_modules/use.rs"
+
+[[bin]]
+name = "super_keyword"
+path = "src/10_modules/super.rs"
+
+[[bin]]
+name = "split_modules"
+path = "src/10_modules/split.rs"
+
+# Chapter 11: Crates
+[[bin]]
+name = "lib_example"
+path = "src/11_crates/lib.rs"
+
+[[bin]]
+name = "using_lib"
+path = "src/11_crates/using_lib.rs"
+
+# Chapter 12: Cargo
+[[bin]]
+name = "dependencies"
+path = "src/12_cargo/dependencies.rs"
+
+[[bin]]
+name = "conventions"
+path = "src/12_cargo/conventions.rs"
+
+[[bin]]
+name = "cargo_testing"
+path = "src/12_cargo/testing.rs"
+
+# Chapter 13: Attributes
+[[bin]]
+name = "dead_code"
+path = "src/13_attributes/dead_code.rs"
+
+[[bin]]
+name = "crates"
+path = "src/13_attributes/crates.rs"
+
+[[bin]]
+name = "cfg"
+path = "src/13_attributes/cfg.rs"
+
+[[bin]]
+name = "custom_attr"
+path = "src/13_attributes/custom.rs"
+
+# Chapter 14: Generics
+[[bin]]
+name = "generics"
+path = "src/14_generics/generics.rs"
+
+[[bin]]
+name = "gen_functions"
+path = "src/14_generics/functions.rs"
+
+[[bin]]
+name = "gen_impl"
+path = "src/14_generics/implementation.rs"
+
+[[bin]]
+name = "gen_traits"
+path = "src/14_generics/traits.rs"
+
+[[bin]]
+name = "bounds"
+path = "src/14_generics/bounds.rs"
+
+[[bin]]
+name = "multiple_bounds"
+path = "src/14_generics/multiple_bounds.rs"
+
+[[bin]]
+name = "where_clause"
+path = "src/14_generics/where_clauses.rs"
+
+[[bin]]
+name = "new_type"
+path = "src/14_generics/new_type_idiom.rs"
+
+[[bin]]
+name = "associated_items"
+path = "src/14_generics/associated_items.rs"
+
+[[bin]]
+name = "phantom"
+path = "src/14_generics/phantom_type_parameters.rs"
+
+# Chapter 15: Scoping Rules
+[[bin]]
+name = "raii"
+path = "src/15_scoping_rules/raii.rs"
+
+[[bin]]
+name = "ownership"
+path = "src/15_scoping_rules/ownership.rs"
+
+[[bin]]
+name = "borrowing"
+path = "src/15_scoping_rules/borrowing.rs"
+
+[[bin]]
+name = "borrow_mut"
+path = "src/15_scoping_rules/mutability.rs"
+
+[[bin]]
+name = "alias"
+path = "src/15_scoping_rules/aliasing.rs"
+
+[[bin]]
+name = "ref_pattern"
+path = "src/15_scoping_rules/ref_pattern.rs"
+
+[[bin]]
+name = "lifetimes"
+path = "src/15_scoping_rules/lifetimes.rs"
+
+[[bin]]
+name = "explicit"
+path = "src/15_scoping_rules/explicit.rs"
+
+[[bin]]
+name = "fn_lifetimes"
+path = "src/15_scoping_rules/functions.rs"
+
+[[bin]]
+name = "method_lifetimes"
+path = "src/15_scoping_rules/methods.rs"
+
+[[bin]]
+name = "struct_lifetimes"
+path = "src/15_scoping_rules/structs.rs"
+
+[[bin]]
+name = "trait_lifetimes"
+path = "src/15_scoping_rules/traits.rs"
+
+[[bin]]
+name = "lifetime_bounds"
+path = "src/15_scoping_rules/bounds.rs"
+
+[[bin]]
+name = "lifetime_coercion"
+path = "src/15_scoping_rules/coercion.rs"
+
+[[bin]]
+name = "static_lifetime"
+path = "src/15_scoping_rules/static.rs"
+
+[[bin]]
+name = "elision"
+path = "src/15_scoping_rules/elision.rs"
+
+# Chapter 16: Traits
+[[bin]]
+name = "traits_basic"
+path = "src/16_traits/traits.rs"
+
+[[bin]]
+name = "derive"
+path = "src/16_traits/derive.rs"
+
+[[bin]]
+name = "returning_traits"
+path = "src/16_traits/returning_traits.rs"
+
+[[bin]]
+name = "operator_overloading"
+path = "src/16_traits/operator_overloading.rs"
+
+[[bin]]
+name = "drop"
+path = "src/16_traits/drop.rs"
+
+[[bin]]
+name = "iterators"
+path = "src/16_traits/iterators.rs"
+
+[[bin]]
+name = "impl_trait"
+path = "src/16_traits/impl_trait.rs"
+
+[[bin]]
+name = "clone"
+path = "src/16_traits/clone.rs"
+
+[[bin]]
+name = "supertraits"
+path = "src/16_traits/supertraits.rs"
+
+[[bin]]
+name = "disambiguating"
+path = "src/16_traits/disambiguating.rs"
+
+# Chapter 17: Macros
+[[bin]]
+name = "macro_syntax"
+path = "src/17_macros/syntax.rs"
+
+[[bin]]
+name = "designators"
+path = "src/17_macros/designators.rs"
+
+[[bin]]
+name = "overload"
+path = "src/17_macros/overload.rs"
+
+[[bin]]
+name = "repeat"
+path = "src/17_macros/repeat.rs"
+
+[[bin]]
+name = "dry"
+path = "src/17_macros/dry.rs"
+
+[[bin]]
+name = "dsl"
+path = "src/17_macros/dsl.rs"
+
+[[bin]]
+name = "variadics"
+path = "src/17_macros/variadics.rs"
+
+# Chapter 18: Error Handling
+[[bin]]
+name = "panic"
+path = "src/18_error_handling/panic.rs"
+
+[[bin]]
+name = "option_unwrap"
+path = "src/18_error_handling/option_unwrap.rs"
+
+[[bin]]
+name = "unpacking_options"
+path = "src/18_error_handling/unpacking_options.rs"
+
+[[bin]]
+name = "combinators"
+path = "src/18_error_handling/combinators.rs"
+
+[[bin]]
+name = "result"
+path = "src/18_error_handling/result.rs"
+
+[[bin]]
+name = "result_map"
+path = "src/18_error_handling/map.rs"
+
+[[bin]]
+name = "result_aliases"
+path = "src/18_error_handling/aliases.rs"
+
+[[bin]]
+name = "early_returns"
+path = "src/18_error_handling/early_returns.rs"
+
+[[bin]]
+name = "question_mark"
+path = "src/18_error_handling/enter_question_mark.rs"
+
+[[bin]]
+name = "multiple_error_types"
+path = "src/18_error_handling/multiple_error_types.rs"
+
+[[bin]]
+name = "pulling_results"
+path = "src/18_error_handling/pulling_results_out.rs"
+
+[[bin]]
+name = "defining_error_type"
+path = "src/18_error_handling/defining_error_type.rs"
+
+[[bin]]
+name = "wrapping_errors"
+path = "src/18_error_handling/wrapping_errors.rs"
+
+[[bin]]
+name = "iter_result"
+path = "src/18_error_handling/iterating_over_results.rs"
+
+# Chapter 19: Std Library Types
+[[bin]]
+name = "box_example"
+path = "src/19_std_library_types/box_stack_heap.rs"
+
+[[bin]]
+name = "vectors"
+path = "src/19_std_library_types/vectors.rs"
+
+[[bin]]
+name = "strings"
+path = "src/19_std_library_types/strings.rs"
+
+[[bin]]
+name = "option_type"
+path = "src/19_std_library_types/option.rs"
+
+[[bin]]
+name = "result_type"
+path = "src/19_std_library_types/result.rs"
+
+[[bin]]
+name = "result_question"
+path = "src/19_std_library_types/question_mark.rs"
+
+[[bin]]
+name = "panic_example"
+path = "src/19_std_library_types/panic.rs"
+
+[[bin]]
+name = "hashmap"
+path = "src/19_std_library_types/hashmap.rs"
+
+[[bin]]
+name = "alt_key_types"
+path = "src/19_std_library_types/alt_key_types.rs"
+
+[[bin]]
+name = "hashset"
+path = "src/19_std_library_types/hashset.rs"
+
+[[bin]]
+name = "rc"
+path = "src/19_std_library_types/rc.rs"
+
+[[bin]]
+name = "arc"
+path = "src/19_std_library_types/arc.rs"
+
+# Chapter 20: Testing
+[[bin]]
+name = "unit_testing"
+path = "src/20_testing/unit_testing.rs"
+
+[[bin]]
+name = "doc_testing"
+path = "src/20_testing/documentation_testing.rs"
+
+[[bin]]
+name = "integration_testing"
+path = "src/20_testing/integration_testing.rs"
+
+[[bin]]
+name = "dev_dependencies"
+path = "src/20_testing/dev_dependencies.rs"
+
+# Chapter 21: Unsafe Operations
+[[bin]]
+name = "unsafe_ops"
+path = "src/21_unsafe_operations/unsafe_operations.rs"
+
+[[bin]]
+name = "calling_unsafe"
+path = "src/21_unsafe_operations/calling_unsafe_functions.rs"
+
+[[bin]]
+name = "mutable_statics"
+path = "src/21_unsafe_operations/mutable_statics.rs"
+
+[[bin]]
+name = "unsafe_traits"
+path = "src/21_unsafe_operations/implementing_unsafe_traits.rs"
+
+# Chapter 22: Compatibility
+[[bin]]
+name = "raw_identifiers"
+path = "src/22_compatibility/raw_identifiers.rs"

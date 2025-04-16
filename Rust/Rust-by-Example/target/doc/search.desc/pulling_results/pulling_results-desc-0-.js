@@ -1,0 +1,1 @@
+searchState.loadedDescShard("pulling_results", 0, "")

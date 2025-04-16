@@ -1,0 +1,1 @@
+searchState.loadedDescShard("new_type", 0, "")
