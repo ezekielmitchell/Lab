@@ -1,0 +1,39 @@
+|multiplexer
+SW[0] => Decoder0.IN2
+SW[1] => Decoder0.IN1
+SW[2] => Decoder0.IN0
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+LED_RED[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+LED_RED[1] <= <GND>
+LED_RED[2] <= <GND>
+LED_RED[3] <= <GND>
+LED_RED[4] <= <GND>
+LED_RED[5] <= <GND>
+LED_RED[6] <= <GND>
+LED_RED[7] <= <GND>
+LED_RED[8] <= <GND>
+LED_RED[9] <= <GND>
+LED_RED[10] <= <GND>
+LED_RED[11] <= <GND>
+LED_RED[12] <= <GND>
+LED_RED[13] <= <GND>
+LED_RED[14] <= <GND>
+LED_RED[15] <= <GND>
+LED_RED[16] <= <GND>
+LED_RED[17] <= <GND>
+
+
