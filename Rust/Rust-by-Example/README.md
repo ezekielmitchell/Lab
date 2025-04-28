@@ -71,21 +71,21 @@ cargo run --bin hello
 <summary><b>Intermediate Features</b></summary>
 
 - [x] Types
-- [ ] Conversion
+- [x] Conversion
 - [x] Expressions
-- [ ] Flow Control
-- [ ] Functions
-- [ ] Modules
-- [ ] Crates
-- [ ] Cargo
-- [ ] Attributes
+- [x] Flow Control
+- [x] Functions
+- [x] Modules
+- [x] Crates
+- [x] Cargo
+- [x] Attributes
 
 </details>
 
 <details>
 <summary><b>Advanced Topics</b></summary>
 
-- [ ] Generics
+- [x] Generics
 - [ ] Scoping Rules
 - [ ] Traits
 - [ ] Macros
