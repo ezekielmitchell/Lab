@@ -6,7 +6,7 @@ impl Years {
     pub fn to_days(&self) -> Days {
         Days(self.0 * 365)
     }
-}
+
 
 impl Days {
     /// truncates partial years
