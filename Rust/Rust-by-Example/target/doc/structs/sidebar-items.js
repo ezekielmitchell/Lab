@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"fn":["main","rect_area","square"],"struct":["Pair","Person","Point","Rectangle","Unit"]};

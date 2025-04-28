@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"fn":["borrow_book","borrow_i32","eat_box_i32","main","new_edition"],"struct":["Book"]};

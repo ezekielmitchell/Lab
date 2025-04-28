@@ -1,1 +1,1 @@
-searchState.loadedDescShard("ref_pattern", 0, "")
+searchState.loadedDescShard("ref_pattern", 0, "When pattern matching via ‘let’: the ‘ref’ keyword …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.")

@@ -1,1 +1,1 @@
-searchState.loadedDescShard("destructuring", 0, "")
+searchState.loadedDescShard("destructuring", 0, "Returns the argument unchanged.\nCalls <code>U::from(self)</code>.")

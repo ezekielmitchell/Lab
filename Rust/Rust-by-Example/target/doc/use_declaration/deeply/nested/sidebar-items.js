@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["my_first_function","my_second_function"],"trait":["AndATraitType"]};

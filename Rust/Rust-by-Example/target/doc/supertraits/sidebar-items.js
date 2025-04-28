@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"fn":["comp_sci_student_greeting","main"],"trait":["CompSciStudent","Person","Programmer","Student"]};

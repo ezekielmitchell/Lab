@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["hello","indirect_all"],"mod":["child","visible_child"]};

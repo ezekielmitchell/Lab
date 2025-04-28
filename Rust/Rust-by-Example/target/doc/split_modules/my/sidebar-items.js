@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["function","indirect_access","private_function"],"mod":["inaccessible","nested","tester"]};

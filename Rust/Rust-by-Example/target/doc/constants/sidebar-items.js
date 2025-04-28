@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"constant":["THRESHOLD"],"fn":["is_big","main"],"static":["LANGUAGE"]};

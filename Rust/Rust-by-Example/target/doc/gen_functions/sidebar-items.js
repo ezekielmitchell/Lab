@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"fn":["gen_spec_i32","gen_spec_t","generic","main","reg_fn"],"mod":["play"],"struct":["A","Single","SingleGen","_S"]};

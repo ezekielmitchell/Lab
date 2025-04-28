@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["private_func","public_func"]};

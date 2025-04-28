@@ -1,1 +1,1 @@
-searchState.loadedDescShard("method_lifetimes", 0, "")
+searchState.loadedDescShard("method_lifetimes", 0, "Returns the argument unchanged.\nCalls <code>U::from(self)</code>.")

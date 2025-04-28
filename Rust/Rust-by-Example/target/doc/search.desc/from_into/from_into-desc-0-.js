@@ -1,1 +1,1 @@
-searchState.loadedDescShard("from_into", 0, "")
+searchState.loadedDescShard("from_into", 0, "Returns the argument unchanged.\nCalls <code>U::from(self)</code>.")

@@ -1,1 +1,1 @@
-searchState.loadedDescShard("alias", 0, "")
+searchState.loadedDescShard("alias", 0, "Data can be IMMUTABLY borrow inifinite amount of times …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.")

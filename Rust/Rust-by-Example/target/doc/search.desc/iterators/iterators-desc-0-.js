@@ -1,1 +1,1 @@
-searchState.loadedDescShard("iterators", 0, "")
+searchState.loadedDescShard("iterators", 0, "Returns the argument unchanged.\nCalls <code>U::from(self)</code>.")

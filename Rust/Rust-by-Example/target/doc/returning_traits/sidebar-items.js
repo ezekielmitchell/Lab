@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main"]};
+window.SIDEBAR_ITEMS = {"fn":["main","random_animal"],"struct":["Cow","Sheep"],"trait":["Animal"]};
