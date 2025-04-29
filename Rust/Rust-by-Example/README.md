@@ -86,8 +86,8 @@ cargo run --bin hello
 <summary><b>Advanced Topics</b></summary>
 
 - [x] Generics
-- [ ] Scoping Rules
-- [ ] Traits
+- [x] Scoping Rules
+- [x] Traits
 - [ ] Macros
 - [ ] Error Handling
 - [ ] Std Library Types
