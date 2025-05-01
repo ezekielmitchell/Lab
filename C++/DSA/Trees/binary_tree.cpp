@@ -1,4 +1,6 @@
 #include<iostream>
+#include <queue>
+#include <iomanip>
 
 using namespace std;
 
@@ -12,13 +14,13 @@ struct Node {
 
 // Search
 bool search(Node* root, int value) {
-    if (root==nullptr) false;
-    if (root->data == value) true;
+    if (root==nullptr) return false;
+    if (root->data == value) return true;
     // Recursion method for searching through BST
     if (value < root->data) {
-        search(root->left_child, value);
+        return search(root->left_child, value);
     } else if (value > root->data) {
-        search(root->right_child, value);
+        return search(root->right_child, value);
     }
     return false;
 }
@@ -52,17 +54,32 @@ void inOrder(Node* root) {
 
 void postOrder(Node* root) {
     if (root==nullptr) return;
-    inOrder(root->left_child);
-    inOrder(root->right_child);
+    postOrder(root->left_child);
+    postOrder(root->right_child);
     cout << root->data << " ";
 }
 
 void preOrder(Node* root) {
     if (root==nullptr) return;
     cout << root->data << " ";
-    inOrder(root->left_child);
-    inOrder(root->right_child);
+    preOrder(root->left_child);
+    preOrder(root->right_child);
 }
+
+// Print Tree
+void printTree(Node* root, int space = 0, int indent = 4) {
+    if (root == nullptr)
+        return;
+
+    space += indent;
+
+    printTree(root->right_child , space);
+
+    cout << setw(space) << root->data << endl;
+
+    printTree(root->left_child, space);
+}
+
 
 int main() {
     Node* root = new Node(12);
@@ -76,6 +93,14 @@ int main() {
     cout << "Pre-Order Traversal: ";
     preOrder(root);
     cout << endl;
+    cout << "In-Order Traversal: ";
+    inOrder(root);
+    cout << endl;
+    cout << "Post-Order Traversal: ";
+    postOrder(root);
+    cout << endl;
+    printTree(root);
+    
 
     deleteTree(root);
     return 0;
