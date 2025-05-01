@@ -64,7 +64,6 @@ void preOrder(Node* root) {
     inOrder(root->right_child);
 }
 
-
 int main() {
     Node* root = new Node(12);
     insert(root, 2);
