@@ -88,12 +88,12 @@ cargo run --bin hello
 - [x] Generics
 - [x] Scoping Rules
 - [x] Traits
-- [ ] Macros
+- [x] Macros
 - [ ] Error Handling
 - [ ] Std Library Types
 - [ ] Testing
 - [ ] Unsafe Operations
-- [ ] Compatibility
+- [x] Compatibility
 
 </details>
 
