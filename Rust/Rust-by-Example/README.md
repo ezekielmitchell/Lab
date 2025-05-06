@@ -90,7 +90,7 @@ cargo run --bin hello
 - [x] Traits
 - [x] Macros
 - [x] Error Handling
-- [ ] Std Library Types
+- [x] Std Library Types
 - [ ] Testing
 - [x] Unsafe Operations
 - [x] Compatibility
