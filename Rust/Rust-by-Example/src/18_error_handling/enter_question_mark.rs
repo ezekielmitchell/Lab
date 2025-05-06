@@ -1,3 +1,20 @@
+use std::num::ParseIntError;
+
+fn multiply(first_num_str: &str, second_num_str: &str) -> Result<i32, ParseIntError> {
+    let first_number = first_num_str.parse::<i32>()?;
+    let second_number = second_num_str.parse::<i32>()?;
+    Ok(first_number*second_number)
+}
+
+fn print(result: Result<i32, ParseIntError>) {
+    match result {
+        Ok(n) => println!("n is {n}"),
+        Err(e) => println!("Error: {e}")
+    }
+}
+
 fn main() {
-    println!("Hello from src/18_error_handling/enter_question_mark.rs");
+    print(multiply("10", "t"));
+    print(multiply("10", "22"));
+
 }

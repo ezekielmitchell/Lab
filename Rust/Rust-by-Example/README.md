@@ -1,4 +1,4 @@
-# 🦀 Rust by Example Journey
+# Rust by Example Journey
 
 <p align="center">
   <img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" alt="Rust Logo">
@@ -9,13 +9,13 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
-## 🔍 Vision
+## Vision
 
 This repo documents my journey learning Rust for computer vision applications in defense and robotics. As a computer engineering student with a focus on military defensive systems and type 1 error reduction, I'm exploring Rust's performance, memory safety, and concurrency features to build more reliable threat detection systems.
 
-## 📚 Contents
+## Contents
 
-```
+```bash
 src/
 ├── 01_hello/               # Hello World - Basic syntax and printing
 ├── 02_primitives/          # Primitives - Working with fundamental types  
@@ -41,7 +41,7 @@ src/
 └── 22_compatibility/       # Compatibility - Working across versions
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -55,7 +55,7 @@ rustc src/01_hello/hello.rs && ./hello
 cargo run --bin hello
 ```
 
-## 📊 Progress
+## Progress
 
 <details open>
 <summary><b>Core Concepts</b></summary>
@@ -89,15 +89,15 @@ cargo run --bin hello
 - [x] Scoping Rules
 - [x] Traits
 - [x] Macros
-- [ ] Error Handling
+- [x] Error Handling
 - [ ] Std Library Types
 - [ ] Testing
-- [ ] Unsafe Operations
+- [x] Unsafe Operations
 - [x] Compatibility
 
 </details>
 
-## 💡 Key Insights
+## Key Insights
 
 > *"Memory safety without garbage collection makes Rust ideal for CV applications where performance is critical."*
 
@@ -116,7 +116,7 @@ cargo run --bin hello
 - **Hardware abstraction** - Safe interfaces for hardware components and I/O
 - **Embedded systems** - Suitable for resource-constrained robotic controllers
 
-## 🔧 Development Setup
+## Development Setup
 
 ```bash
 # Install Rust

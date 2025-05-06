@@ -1,26 +1,26 @@
 #![allow(unused)]
 
-use std;
+// Rust provides type safety via static typing.
+// Variable bindings can be type annotated when declared.
+// However, in most cases, the compiler will be able to infer the type of the variable from the context, heavily reducing the annotation burden.
 
-fn main(){
-    fizz_buzz_to(5);
-    fizz_buzz(15);
-}
+fn main() {
+    // Type annotated binding
+    let an_integer: i32 = 1;
+    
+    // Default integer type inference
+    let inferred_type = 12;
+    
+    // Mutable variable binding
+    let mut mutable = 12;
+    mutable = 21;
+    
+    // Variable shadowing
+    let x = 5;
+    let x = x + 1;
 
-fn fizz_buzz(user_input: i8) {
-    if (user_input % 15 == 0) {
-        println!("FizzBuzz!")
-    } else if (user_input % 3 == 0) {
-        println!("Fizz!");
-    } else if (user_input % 5 == 0) {
-        println!("Buzz!")
-    } else {
-        println!("{user_input}")
-    }
-}
-
-fn fizz_buzz_to(count: i8) {
-    for i in 1..=count{
-        fizz_buzz(i);
-    }
+    println!("Type annotated: {}", an_integer);
+    println!("Inferred type: {}", inferred_type);
+    println!("Mutable value: {}", mutable);
+    println!("Shadowed value: {}", x);
 }
