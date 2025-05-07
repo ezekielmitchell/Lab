@@ -588,6 +588,10 @@ path = "src/20_testing/integration_testing.rs"
 name = "dev_dependencies"
 path = "src/20_testing/dev_dependencies.rs"
 
+[[bin]]
+name = "file_io"
+path = "src/20_testing/file_io.rs"
+
 # Chapter 21: Unsafe Operations
 [[bin]]
 name = "unsafe_ops"
