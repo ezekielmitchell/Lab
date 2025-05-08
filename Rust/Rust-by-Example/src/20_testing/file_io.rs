@@ -9,6 +9,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 use std::fs::read_to_string;
+use std::process::Command;
 
 static LOREM_IPSUM: &str =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -21,7 +22,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 fn main() {
     // READ from FILE
-    let path = Path::new("hello.txt");
+    let path = Path::new("./hello.txt");
     let display = path.display();
 
     // open path in read-only
@@ -50,6 +51,10 @@ fn main() {
         Err(why) => panic!("couldn't write to {} : {}", display, why),
         Ok(_) => println!("sucessfully wrote to {}", display),
     };
+
+    // wait 5 sec
+    let mut child = Command::new("sleep").arg("5").spawn().unwrap();
+    let _result = child.wait().unwrap();
 
     // READ LINES
     let read_lines = |filename: &str| -> Vec<String> {
