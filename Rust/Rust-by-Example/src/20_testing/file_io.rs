@@ -66,5 +66,10 @@ fn main() {
         result
     };
 
+    // print entire lorum.txt file content
     read_lines("./lorum.txt");
+
+    // wait 5 sec
+    let mut child1 = Command::new("sleep").arg("5").spawn().unwrap();
+    let _result = child1.wait().unwrap();
 }
