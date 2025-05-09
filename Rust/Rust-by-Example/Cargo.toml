@@ -592,6 +592,11 @@ path = "src/20_testing/dev_dependencies.rs"
 name = "file_io"
 path = "src/20_testing/file_io.rs"
 
+[[bin]]
+name = "file_system"
+path = "src/20_testing/file_system.rs"
+
+
 # Chapter 21: Unsafe Operations
 [[bin]]
 name = "unsafe_ops"
