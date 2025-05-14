@@ -91,7 +91,7 @@ cargo run --bin hello
 - [x] Macros
 - [x] Error Handling
 - [x] Std Library Types
-- [ ] Testing
+- [x] Testing
 - [x] Unsafe Operations
 - [x] Compatibility
 
