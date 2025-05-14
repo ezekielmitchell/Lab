@@ -1,3 +1,6 @@
-fn main() {
-    println!("Hello from src/20_testing/integration_testing.rs");
+// Define this in a crate called `adder`.
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
 }
+
+fn main(){}

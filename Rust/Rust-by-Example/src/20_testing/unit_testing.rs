@@ -1,3 +1,14 @@
+/// First line is a short summary describing function.
+///
+/// The next lines present detailed documentation. Code blocks start with
+/// triple backquotes and have implicit `fn main()` inside
+/// and `extern crate <cratename>`. Assume we're testing `doccomments` crate:
+///
+/// ```
+/// let result = doccomments::add(2, 3);
+/// assert_eq!(result, 5);
+/// ```
+
 // In software development, there are several types of testing, each serving a specific purpose. Here are the main types:
 // 1. **Unit Testing**: Tests individual components or functions in isolation to ensure they work as expected.
 // 2. **Integration Testing**: Verifies that different modules or components work together correctly.
@@ -49,7 +60,7 @@ mod tests {
 
     #[test]
     fn test_bad_add() {
-        assert_eq!(bad_add(1,2), 3); // will fail
+        assert_eq!(bad_add(1,2), -1);
     }
 
     #[test]
