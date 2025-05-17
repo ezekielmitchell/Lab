@@ -20,7 +20,6 @@ int main(int argc, char* argv[]) {
     Cookie* blue = new Cookie("");
     Cookie* green = new Cookie("");
 
-    // cout << red->setColor()
     cout << "Red old: " << red->getColor() << endl;
     cout << "Blue old: " << blue->getColor() << endl;
     cout << "Green old: " << green->getColor() << endl;
