@@ -7,8 +7,7 @@ class BST {
     private:
         struct TreeNode {
             int data;
-            TreeNode* left_node;
-            TreeNode* right_node;
+            TreeNode *left_node, *right_node;
             
             // Constructor
             TreeNode(int value) : data(value), left_node(nullptr), right_node(nullptr){}
@@ -19,11 +18,19 @@ class BST {
     public:
 
         // Constructors & Destructor
-        BST();
+        BST() : root(nullptr){};
+
+        BST(int value){
+            TreeNode* new_node = new TreeNode(value);
+        };
+
         ~BST();
 
         // Main Operations
-        void insert(int value){}
+        void insert(int value){
+
+        }
+
         bool search(int value) const;
         void remove(int value);
 
@@ -33,7 +40,10 @@ class BST {
         void post_order();
 
         // Utility Functions
-        bool is_empty() const;
+        bool is_empty() const {
+            return root == nullptr;
+        };
+
         int find_max() const;
         int find_min() const;
 };

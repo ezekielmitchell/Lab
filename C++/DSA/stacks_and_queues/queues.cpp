@@ -1,0 +1,34 @@
+// Queues
+#include <iostream>
+
+using namespace std;
+
+// Constructor
+class Node {
+    public:
+        int value;
+        Node* next;
+
+        Node(int value){
+            this->value = value;
+            next=nullptr;
+        }
+};
+
+class Queue {
+    private:
+        Node* first;
+        Node* last;
+        int length;
+    
+    public:
+        Queue(int value){
+            Node* newNode = new Node(value);
+            first, last = newNode;
+            length = 1;
+        }
+};
+
+int main() {
+    return 0;
+}
