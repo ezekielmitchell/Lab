@@ -2,34 +2,46 @@
 #include <queue>
 using namespace std;
 
+class BST {
 
-struct TreeNode {
-    int data;
-    TreeNode* left;
-    TreeNode* right;
+    private:
+        int data;
+        int height;
 
-    TreeNode(int value){
-        this->data = value;
-    }
-};
+    public:
+        struct TreeNode {
+            int data;
+            TreeNode* left;
+            TreeNode* right;
 
-void levelOrderTraversal(TreeNode* root) {
-    if(root==nullptr) return;
+            TreeNode(int value){
+                this->data = value;
+            }
+        };
 
-    queue<TreeNode*> q;
-    q.push(root);
+        void levelOrderTraversal(TreeNode* root) {
+            if(root==nullptr) return;
 
-    while(!q.empty()){
-        TreeNode* current = q.front();
-        q.pop();
+            queue<TreeNode*> q;
+            q.push(root);
 
-        cout << current->data << endl;
+            while(!q.empty()){
+                TreeNode* current = q.front();
+                q.pop();
 
-        if(current->left != nullptr) q.push(current->left);
-        if(current->right != nullptr) q.push(current->right);
-    }
+                cout << current->data << endl;
+
+                if(current->left != nullptr) q.push(current->left);
+                if(current->right != nullptr) q.push(current->right);
+            }
+        };
 };
 
 int main() {
+
+    BST::TreeNode* node = new BST::TreeNode(5);
+    BST tree;
+    tree.levelOrderTraversal(node);
+    delete node;
     return 0;
 }
