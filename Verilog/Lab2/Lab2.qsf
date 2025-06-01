@@ -1,32 +1,55 @@
-# Switches
+set_global_assignment -name TOP_LEVEL_ENTITY top
+# de1-soc pin assignments from user manual
+
+# switches sw9-0 (table 3-6)
 set_location_assignment PIN_AB12 -to SW[0]
 set_location_assignment PIN_AC12 -to SW[1]
-set_location_assignment PIN_AF14 -to SW[2]
-set_location_assignment PIN_AF15 -to SW[3]
-set_location_assignment PIN_AG14 -to SW[4]
-set_location_assignment PIN_AH14 -to SW[5]
-set_location_assignment PIN_AJ14 -to SW[6]
-set_location_assignment PIN_AK14 -to SW[7]
-set_location_assignment PIN_AK13 -to SW[8]
-set_location_assignment PIN_AK12 -to SW[9]
+set_location_assignment PIN_AF9 -to SW[2]
+set_location_assignment PIN_AF10 -to SW[3]
+set_location_assignment PIN_AD11 -to SW[4]
+set_location_assignment PIN_AD12 -to SW[5]
+set_location_assignment PIN_AE11 -to SW[6]
+set_location_assignment PIN_AC9 -to SW[7]
+set_location_assignment PIN_AD10 -to SW[8]
+set_location_assignment PIN_AE12 -to SW[9]
 
-# LEDs
-set_location_assignment PIN_AA24 -to LEDR[0]
-set_location_assignment PIN_AB24 -to LEDR[1]
-set_location_assignment PIN_AC24 -to LEDR[2]
-set_location_assignment PIN_AD24 -to LEDR[3]
-set_location_assignment PIN_AE24 -to LEDR[4]
-set_location_assignment PIN_AF24 -to LEDR[5]
-set_location_assignment PIN_AG24 -to LEDR[6]
-set_location_assignment PIN_AH24 -to LEDR[7]
-set_location_assignment PIN_AJ24 -to LEDR[8]
-set_location_assignment PIN_AK24 -to LEDR[9]
+# red leds ledr9-0 (table 3-8)
+set_location_assignment PIN_V16 -to LEDR[0]
+set_location_assignment PIN_W16 -to LEDR[1]
+set_location_assignment PIN_V17 -to LEDR[2]
+set_location_assignment PIN_V18 -to LEDR[3]
+set_location_assignment PIN_W17 -to LEDR[4]
+set_location_assignment PIN_W19 -to LEDR[5]
+set_location_assignment PIN_Y19 -to LEDR[6]
+set_location_assignment PIN_W20 -to LEDR[7]
+set_location_assignment PIN_W21 -to LEDR[8]
+set_location_assignment PIN_Y21 -to LEDR[9]
 
-# HEX0 (7-segment)
-set_location_assignment PIN_Y23 -to HEX0[0]
-set_location_assignment PIN_W22 -to HEX0[1]
-set_location_assignment PIN_V21 -to HEX0[2]
-set_location_assignment PIN_W21 -to HEX0[3]
-set_location_assignment PIN_Y21 -to HEX0[4]
-set_location_assignment PIN_Y22 -to HEX0[5]
-set_location_assignment PIN_AB23 -to HEX0[6]
+# 7-segment display hex0 (table 3-9)
+set_location_assignment PIN_AE26 -to HEX0[0]
+set_location_assignment PIN_AE27 -to HEX0[1]
+set_location_assignment PIN_AE28 -to HEX0[2]
+set_location_assignment PIN_AG27 -to HEX0[3]
+set_location_assignment PIN_AF28 -to HEX0[4]
+set_location_assignment PIN_AG28 -to HEX0[5]
+set_location_assignment PIN_AH28 -to HEX0[6]
+
+# io standards
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[*]
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name FAMILY "Cyclone V"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE eight_bit.v
+set_global_assignment -name VERILOG_FILE three_bit.v
+set_global_assignment -name VERILOG_FILE seven_segment.v

@@ -1,0 +1,41 @@
+// ECEGR 2220 Lab 2 - 8-bit 2-to-1 Multiplexer
+// Modified for DE1-SoC board
+
+module top(
+    // Inputs
+    input wire [9:0] SW,        // DE1-SoC has SW[9:0]
+    
+    // Outputs
+    output wire [9:0] LEDR,     // DE1-SoC red LEDs
+    output wire [7:0] LEDG      // DE1-SoC green LEDs (if available)
+);
+
+// Internal wire declarations
+wire [7:0] X, Y, M;
+wire s;
+
+// Assign inputs
+assign s = SW[9];           // Use SW[9] as select signal
+assign X = SW[7:0];         // X input from SW[7:0]
+assign Y = {SW[8], SW[7:1]}; // Y input - modified since DE1-SoC has only 10 switches
+
+// 8-bit wide 2-to-1 multiplexer using 8 individual 2-to-1 muxes
+assign M[0] = (~s & X[0]) | (s & Y[0]);
+assign M[1] = (~s & X[1]) | (s & Y[1]);
+assign M[2] = (~s & X[2]) | (s & Y[2]);
+assign M[3] = (~s & X[3]) | (s & Y[3]);
+assign M[4] = (~s & X[4]) | (s & Y[4]);
+assign M[5] = (~s & X[5]) | (s & Y[5]);
+assign M[6] = (~s & X[6]) | (s & Y[6]);
+assign M[7] = (~s & X[7]) | (s & Y[7]);
+
+// Connect switches to red LEDs to show input values
+assign LEDR[7:0] = SW[7:0];   // Show X input
+assign LEDR[8] = SW[8];       // Show part of Y input
+assign LEDR[9] = SW[9];       // Show select signal
+
+// Connect multiplexer output to green LEDs (if available)
+// Note: DE1-SoC may not have green LEDs, so we'll use available LEDs
+assign LEDG[7:0] = M[7:0];    // Show multiplexer output
+
+endmodule
