@@ -1,0 +1,36 @@
+# Pin assignments for Lab 3 Demo 1 Complete - DE1-SoC Board
+# Binary-to-Decimal Converter with 7-Segment Displays
+
+# Device assignment for DE1-SoC
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY top
+
+# Slide Switches SW[3:0] - Input for 4-bit binary number V
+set_location_assignment PIN_AB12 -to SW[0]  # V[0]
+set_location_assignment PIN_AC12 -to SW[1]  # V[1]
+set_location_assignment PIN_AF9 -to SW[2]   # V[2]
+set_location_assignment PIN_AF10 -to SW[3]  # V[3]
+
+# 7-Segment Display HEX0 (ones digit)
+set_location_assignment PIN_AE26 -to HEX0[0]
+set_location_assignment PIN_AE27 -to HEX0[1]
+set_location_assignment PIN_AE28 -to HEX0[2]
+set_location_assignment PIN_AG27 -to HEX0[3]
+set_location_assignment PIN_AF28 -to HEX0[4]
+set_location_assignment PIN_AG28 -to HEX0[5]
+set_location_assignment PIN_AH28 -to HEX0[6]
+
+# 7-Segment Display HEX1 (tens digit)
+set_location_assignment PIN_AJ29 -to HEX1[0]
+set_location_assignment PIN_AH29 -to HEX1[1]
+set_location_assignment PIN_AH30 -to HEX1[2]
+set_location_assignment PIN_AG30 -to HEX1[3]
+set_location_assignment PIN_AF29 -to HEX1[4]
+set_location_assignment PIN_AF30 -to HEX1[5]
+set_location_assignment PIN_AD27 -to HEX1[6]
+
+# I/O Standards for DE1-SoC (3.3V)
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[*]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[*]
