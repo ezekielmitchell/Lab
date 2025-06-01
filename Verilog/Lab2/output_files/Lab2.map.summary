@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Apr 25 12:05:50 2025
+Analysis & Synthesis Status : Successful - Sat May 31 18:37:10 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : Lab2
-Top-level Entity Name : multiplexer
+Top-level Entity Name : top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 17
-Total pins : 6
+Total registers : 0
+Total pins : 20
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
