@@ -1,0 +1,36 @@
+module three_storage(
+    input wire [9:0] SW,
+    input wire [3:0] KEY,
+    output wire [9:0] LEDR
+);
+
+    wire D, Clk;
+    reg Qa, Qb, Qc;
+    
+    // Connect inputs
+    assign D = SW[0];
+    assign Clk = SW[1];
+    
+    // Gated D Latch - transparent when Clk=1
+    always @* begin
+        if (Clk)
+            Qa = D;
+    end
+    
+    // Positive-edge triggered D flip-flop
+    always @(posedge Clk) begin
+        Qb <= D;
+    end
+    
+    // Negative-edge triggered D flip-flop  
+    always @(negedge Clk) begin
+        Qc <= D;
+    end
+    
+    // Connect outputs
+    assign LEDR[0] = Qa;  // D Latch output
+    assign LEDR[1] = Qb;  // Pos-edge FF output
+    assign LEDR[2] = Qc;  // Neg-edge FF output
+    assign LEDR[9:3] = 7'b0;  // Turn off unused LEDs
+
+endmodule

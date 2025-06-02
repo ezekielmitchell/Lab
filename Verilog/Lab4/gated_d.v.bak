@@ -1,0 +1,25 @@
+module gated_d(
+    input wire [9:0] SW,
+    input wire [3:0] KEY,
+    output wire [9:0] LEDR
+);
+
+    wire D, Clk;
+    reg Q;
+    
+    // Connect inputs
+    assign D = SW[0];
+    assign Clk = SW[1];
+    
+    // Gated D Latch using behavioral Verilog
+    always @* begin
+        if (Clk)
+            Q = D;
+        // When Clk is 0, Q retains its value (inferred latch)
+    end
+    
+    // Connect output
+    assign LEDR[0] = Q;
+    assign LEDR[9:1] = 9'b0;  // Turn off unused LEDs
+
+endmodule
