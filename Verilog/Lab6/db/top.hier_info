@@ -1,0 +1,40 @@
+|top
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+LEDR[0] << counter:mod_k_counter.Q
+LEDR[1] << counter:mod_k_counter.Q
+LEDR[2] << counter:mod_k_counter.Q
+LEDR[3] << counter:mod_k_counter.Q
+LEDR[4] << counter:mod_k_counter.Q
+LEDR[5] << counter:mod_k_counter.Q
+LEDR[6] << counter:mod_k_counter.Q
+LEDR[7] << counter:mod_k_counter.Q
+
+
+|top|counter:mod_k_counter
+clock => Q[0]~reg0.CLK
+clock => Q[1]~reg0.CLK
+clock => Q[2]~reg0.CLK
+clock => Q[3]~reg0.CLK
+clock => Q[4]~reg0.CLK
+clock => Q[5]~reg0.CLK
+clock => Q[6]~reg0.CLK
+clock => Q[7]~reg0.CLK
+reset_n => Q[0]~reg0.ACLR
+reset_n => Q[1]~reg0.ACLR
+reset_n => Q[2]~reg0.ACLR
+reset_n => Q[3]~reg0.ACLR
+reset_n => Q[4]~reg0.ACLR
+reset_n => Q[5]~reg0.ACLR
+reset_n => Q[6]~reg0.ACLR
+reset_n => Q[7]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
