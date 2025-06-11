@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Wed Jun 11 07:50:12 2025
+Wed Jun 11 08:04:41 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -14,10 +14,22 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: counter:mod_k_counter
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 16. Port Connectivity Checks: "bin_to_7seg:hr_msb_disp"
+ 17. Port Connectivity Checks: "bin_to_7seg:hr_lsb_disp"
+ 18. Port Connectivity Checks: "bin_to_7seg:min_msb_disp"
+ 19. Port Connectivity Checks: "bin_to_7seg:min_lsb_disp"
+ 20. Port Connectivity Checks: "bin_to_7seg:sec_msb_disp"
+ 21. Port Connectivity Checks: "bin_to_7seg:sec_lsb_disp"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -44,14 +56,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 11 07:50:12 2025          ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 11 08:04:41 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; top                                            ;
 ; Top-level Entity Name           ; top                                            ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 8                                              ;
-; Total pins                      ; 10                                             ;
+; Total registers                 ; 43                                             ;
+; Total pins                      ; 57                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -168,51 +180,92 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; top.v                            ; yes             ; User Verilog HDL File  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v     ;         ;
-; counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/counter.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; top.v                            ; yes             ; User Verilog HDL File        ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v                      ;         ;
+; output_files/bin_to_7seg.v       ; yes             ; User Verilog HDL File        ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/output_files/bin_to_7seg.v ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc         ;         ;
+; db/lpm_divide_62m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_62m.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_ose.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/alt_u_div_ose.tdf       ;         ;
+; db/lpm_divide_3am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_3am.tdf      ;         ;
+; db/lpm_divide_52m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_52m.tdf      ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/sign_div_unsign_8kh.tdf ;         ;
+; db/alt_u_div_mse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/alt_u_div_mse.tdf       ;         ;
+; db/lpm_divide_2am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_2am.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                  ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5                              ;
-;                                             ;                                ;
-; Combinational ALUT usage for logic          ; 10                             ;
-;     -- 7 input functions                    ; 0                              ;
-;     -- 6 input functions                    ; 0                              ;
-;     -- 5 input functions                    ; 1                              ;
-;     -- 4 input functions                    ; 1                              ;
-;     -- <=3 input functions                  ; 8                              ;
-;                                             ;                                ;
-; Dedicated logic registers                   ; 8                              ;
-;                                             ;                                ;
-; I/O pins                                    ; 10                             ;
-;                                             ;                                ;
-; Total DSP Blocks                            ; 0                              ;
-;                                             ;                                ;
-; Maximum fan-out node                        ; counter:mod_k_counter|Equal0~1 ;
-; Maximum fan-out                             ; 8                              ;
-; Total fan-out                               ; 74                             ;
-; Average fan-out                             ; 1.95                           ;
-+---------------------------------------------+--------------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 131            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 248            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 11             ;
+;     -- 5 input functions                    ; 12             ;
+;     -- 4 input functions                    ; 34             ;
+;     -- <=3 input functions                  ; 191            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 43             ;
+;                                             ;                ;
+; I/O pins                                    ; 57             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 43             ;
+; Total fan-out                               ; 970            ;
+; Average fan-out                             ; 2.40           ;
++---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
-; |top                       ; 10 (0)              ; 8 (0)                     ; 0                 ; 0          ; 10   ; 0            ; |top                       ; top         ; work         ;
-;    |counter:mod_k_counter| ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |top|counter:mod_k_counter ; counter     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |top                                   ; 248 (58)            ; 43 (43)                   ; 0                 ; 0          ; 57   ; 0            ; |top                                                                                                 ; top                 ; work         ;
+;    |bin_to_7seg:hr_lsb_disp|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:hr_lsb_disp                                                                         ; bin_to_7seg         ; work         ;
+;    |bin_to_7seg:hr_msb_disp|           ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:hr_msb_disp                                                                         ; bin_to_7seg         ; work         ;
+;    |bin_to_7seg:min_lsb_disp|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:min_lsb_disp                                                                        ; bin_to_7seg         ; work         ;
+;    |bin_to_7seg:min_msb_disp|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:min_msb_disp                                                                        ; bin_to_7seg         ; work         ;
+;    |bin_to_7seg:sec_lsb_disp|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:sec_lsb_disp                                                                        ; bin_to_7seg         ; work         ;
+;    |bin_to_7seg:sec_msb_disp|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|bin_to_7seg:sec_msb_disp                                                                        ; bin_to_7seg         ; work         ;
+;    |lpm_divide:Div0|                   ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_3am:auto_generated|  ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div0|lpm_divide_3am:auto_generated                                                   ; lpm_divide_3am      ; work         ;
+;          |sign_div_unsign_9kh:divider| ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div0|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;             |alt_u_div_ose:divider|    ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div0|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;    |lpm_divide:Div1|                   ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_3am:auto_generated|  ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div1|lpm_divide_3am:auto_generated                                                   ; lpm_divide_3am      ; work         ;
+;          |sign_div_unsign_9kh:divider| ; 27 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div1|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;             |alt_u_div_ose:divider|    ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div1|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;    |lpm_divide:Div2|                   ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_2am:auto_generated|  ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div2|lpm_divide_2am:auto_generated                                                   ; lpm_divide_2am      ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div2|lpm_divide_2am:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_mse:divider|    ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Div2|lpm_divide_2am:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_mse:divider ; alt_u_div_mse       ; work         ;
+;    |lpm_divide:Mod0|                   ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_62m:auto_generated|  ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;          |sign_div_unsign_9kh:divider| ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;             |alt_u_div_ose:divider|    ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;    |lpm_divide:Mod1|                   ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_62m:auto_generated|  ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod1|lpm_divide_62m:auto_generated                                                   ; lpm_divide_62m      ; work         ;
+;          |sign_div_unsign_9kh:divider| ; 31 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod1|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;             |alt_u_div_ose:divider|    ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod1|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider ; alt_u_div_ose       ; work         ;
+;    |lpm_divide:Mod2|                   ; 20 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_52m:auto_generated|  ; 20 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod2|lpm_divide_52m:auto_generated                                                   ; lpm_divide_52m      ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 20 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod2|lpm_divide_52m:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_mse:divider|    ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|lpm_divide:Mod2|lpm_divide_52m:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_mse:divider ; alt_u_div_mse       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -221,25 +274,217 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
-; Number of registers using Synchronous Clear  ; 8     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 8     ;
+; Total registers                              ; 43    ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 43    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 17    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:mod_k_counter ;
-+----------------+-------+-------------------------------------------+
-; Parameter Name ; Value ; Type                                      ;
-+----------------+-------+-------------------------------------------+
-; n              ; 8     ; Signed Integer                            ;
-; k              ; 12    ; Signed Integer                            ;
-+----------------+-------+-------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |top|seconds[5]            ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |top|minutes[5]            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|hours[3]              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_52m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:hr_msb_disp"                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:hr_lsb_disp"                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:min_msb_disp"                                                                                                                                                           ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:min_lsb_disp"                                                                                                                                                           ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:sec_msb_disp"                                                                                                                                                           ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin_to_7seg:sec_lsb_disp"                                                                                                                                                           ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_in ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -247,18 +492,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 8                           ;
-;     CLR SCLR          ; 8                           ;
-; arriav_lcell_comb     ; 10                          ;
-;     arith             ; 8                           ;
+; arriav_ff             ; 43                          ;
+;     CLR SCLR          ; 26                          ;
+;     ENA CLR           ; 11                          ;
+;     ENA CLR SCLR      ; 1                           ;
+;     ENA CLR SLD       ; 5                           ;
+; arriav_lcell_comb     ; 255                         ;
+;     arith             ; 96                          ;
+;         0 data inputs ; 20                          ;
+;         1 data inputs ; 36                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 4                           ;
+;     normal            ; 129                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 8                           ;
-;     normal            ; 2                           ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 1                           ;
-; boundary_port         ; 10                          ;
+;         2 data inputs ; 41                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 11                          ;
+;     shared            ; 30                          ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 24                          ;
+; boundary_port         ; 57                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 8.10                        ;
+; Average LUT depth     ; 5.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -277,7 +537,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Jun 11 07:50:05 2025
+    Info: Processing started: Wed Jun 11 08:04:33 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -285,20 +545,78 @@ Info (12021): Found 1 design units, including 1 entities, in source file top.v
     Info (12023): Found entity 1: top File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file counter.v
     Info (12023): Found entity 1: counter File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/bin_to_7seg.v
+    Info (12023): Found entity 1: bin_to_7seg File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/output_files/bin_to_7seg.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "counter" for hierarchy "counter:mod_k_counter" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 13
-Warning (10230): Verilog HDL assignment warning at counter.v(19): truncated value with size 32 to match size of target (8) File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/counter.v Line: 19
+Warning (10230): Verilog HDL assignment warning at top.v(26): truncated value with size 32 to match size of target (26) File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 26
+Warning (10230): Verilog HDL assignment warning at top.v(53): truncated value with size 32 to match size of target (5) File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 53
+Warning (10230): Verilog HDL assignment warning at top.v(58): truncated value with size 32 to match size of target (6) File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 58
+Warning (10230): Verilog HDL assignment warning at top.v(63): truncated value with size 32 to match size of target (6) File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 63
+Info (12128): Elaborating entity "bin_to_7seg" for hierarchy "bin_to_7seg:sec_lsb_disp" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 70
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 70
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 71
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 72
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 73
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 74
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 75
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 70
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 70
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_62m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/alt_u_div_ose.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 71
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 71
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3am.tdf
+    Info (12023): Found entity 1: lpm_divide_3am File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_3am.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 74
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 74
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_52m.tdf
+    Info (12023): Found entity 1: lpm_divide_52m File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_52m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/sign_div_unsign_8kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
+    Info (12023): Found entity 1: alt_u_div_mse File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/alt_u_div_mse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 75
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 75
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
+    Info (12023): Found entity 1: lpm_divide_2am File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/db/lpm_divide_2am.tdf Line: 25
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 6
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 10 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4868 megabytes
-    Info: Processing ended: Wed Jun 11 07:50:12 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/emitchell4/Documents/GitHub/Lab/Verilog/Lab6/top.v Line: 3
+Info (21057): Implemented 307 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 250 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Wed Jun 11 08:04:41 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:12
 
 
