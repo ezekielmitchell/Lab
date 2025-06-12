@@ -18,8 +18,8 @@ module top (
         begin
             clock_divider <= 0;
             seconds       <= 0;
-            minutes       <= 0;
-            hours         <= 0;
+            minutes       <= 37;
+            hours         <= 1;
         end 
         else 
         begin
