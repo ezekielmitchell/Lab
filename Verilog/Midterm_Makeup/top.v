@@ -1,3 +1,10 @@
+/**
+Ezekiel Mitchell
+ECEGR 2220 
+Morse Code - De1-SoC
+June 13, 2025
+**/
+
 module top(
     input wire CLOCK_50,
     input wire [3:0] KEY,
