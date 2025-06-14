@@ -1,36 +1,26 @@
 module top(
-    // Inputs
-    input wire [7:0] A,
-    input wire       Clock,
-    input wire       Reset_n,
-
-    // Outputs
-    output reg [7:0] S,
-    output reg       Overflow
+    input wire [9:0] SW,
+    input wire [3:0] KEY,
+    output reg [9:0] LEDR
 );
 
-    // Internal wire for the 9-bit result of the addition
-    wire [8:0] temp_sum;
-
-    // The combinational logic for the adder
-    // {Overflow, S} is a 9-bit value.
-    assign temp_sum = S + A;
-
-    // The sequential logic for the registers
-    // This always block is triggered on the positive edge of the clock
-    // or the negative edge of the reset signal.
-    always @(posedge Clock or negedge Reset_n)
-    begin
-        if (!Reset_n) // Active-low asynchronous reset
-        begin
+    reg [7:0] S;
+    wire [8:0] sum_result;
+    
+    assign sum_result = SW[7:0] + S;
+    
+    always @(posedge KEY[1] or negedge KEY[0]) begin
+        if (~KEY[0]) begin
             S <= 8'b0;
-            Overflow <= 1'b0;
+        end else begin
+            S <= sum_result[7:0];
         end
-        else // On the rising edge of the clock
-        begin
-            S <= temp_sum[7:0];
-            Overflow <= temp_sum[8]; // Capture the carry-out bit
-        end
+    end
+    
+    always @(*) begin
+        LEDR[7:0] = sum_result[7:0];
+        LEDR[8] = sum_result[8];
+        LEDR[9] = 1'b0;
     end
 
 endmodule
